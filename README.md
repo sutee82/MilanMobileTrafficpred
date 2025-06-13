@@ -13,11 +13,57 @@ The project is organized into the following Jupyter notebooks:
 3.  `03_RandomForrest_modelling.ipynb`: Implements and evaluates a Random Forest regression model.
 4.  `04_XBOOST_modeling.ipynb`: Implements and evaluates an XGBoost regression model.
 
+## Dataset
+
+The dataset used in this project is a multi-source collection of urban life in the city of Milan and the Province of Trentino, Italy.
+
+### Source
+
+The dataset was curated and made available by:
+
+Barlacchi, G., De Nadai, M., Larcher, R. et al. A multi-source dataset of urban life in the city of Milan and the Province of Trentino. *Sci Data* **2**, 150055 (2015). https://doi.org/10.1038/sdata.2015.55
+
+It can be accessed through [nature.com](https://www.nature.com/articles/sdata201555).
+
+### Time Period
+
+The data spans a 2-month period from **November 1, 2013**, to **December 31, 2013**, with observations recorded every **10 minutes**.
+
+### Data Components
+
+The dataset is comprised of the following components:
+
+#### 1. Call Detail Records (CDRs)
+
+Provided by the **Semantics and Knowledge Innovation Lab (SKIL) of Telecom Italia**, the CDRs capture telecommunication activity. A record is generated for each of the following events:
+* **Received SMS:** A user receives a text message.
+* **Sent SMS:** A user sends a text message.
+* **Incoming Call:** A user receives a phone call.
+* **Outgoing Call:** A user makes a phone call.
+
+#### 2. Precipitation Data
+
+This includes meteorological information about precipitation in the covered area. The data is structured with the following features:
+* **Area Covered:** The percentage of the geographical area experiencing precipitation.
+* **Type:** The nature of the precipitation, categorized as `none`, `snow`, or `rain`.
+* **Strength:** The intensity of the precipitation, rated on a scale from 0 to 3.
+
+#### 3. National Holidays
+
+To account for public holidays that may influence urban activity, a list of national holidays for the Milan region during the observation period has been generated and included.
+
+***
+
+
+
+## Feature engineering 
+
+
 ## Models Used
 
 The following machine learning models are explored in this project:
-*   K-Nearest Neighbors (KNN) Regression
-*   Random Forest Regression
+*   GPU accelerated (CuML) K-Nearest Neighbors (KNN) Regression
+*   GPU accelerated (CuML) Random Forest Regression
 *   XGBoost Regression
 
 ## How to Run
@@ -28,4 +74,4 @@ The following machine learning models are explored in this project:
     ```bash
     pip install pandas scikit-learn xgboost matplotlib seaborn jupyter
     ```
-4.  Run the Jupyter notebooks in sequential order, starting from `01_Data_preprocessing.ipynb`.
+4.  Run the Jupyter notebooks 
