@@ -98,16 +98,70 @@ My `comprehensive_data_transformation` function takes the raw data and applies t
 ## Models Used
 
 The following machine learning models are explored in this project:
-*   GPU accelerated (CuML) K-Nearest Neighbors (KNN) Regression
-*   GPU accelerated (CuML) Random Forest Regression
-*   XGBoost Regression
+### GPU-Accelerated KNN Regression ⚡️
 
-## How to Run
+* **Model Training & Prediction**: A **K-Nearest Neighbors (KNN)** regressor is trained on **GPU-accelerated** data. Using **GridSearchCV**, the best number of neighbors was found to be 5. The final model then makes predictions on the test set.
 
-1.  Ensure you have Python and Jupyter Notebook installed.
-2.  Clone the repository.
-3.  Install the necessary dependencies (e.g., pandas, scikit-learn, xgboost, matplotlib, seaborn). You might find these listed at the beginning of each notebook.
-    ```bash
-    pip install pandas scikit-learn xgboost matplotlib seaborn jupyter
-    ```
-4.  Run the Jupyter notebooks 
+* **Performance Evaluation**: The predictions are moved back to the **CPU** to calculate the overall **Mean Squared Error (MSE)** and **R-squared (R²)** scores, which evaluate the model's accuracy.
+
+* **Detailed Analysis**: The model's performance is also assessed individually for each of the three target variables: '**SMS**', '**Call**', and '**Internet**' activity.
+
+### XGBoost Regression  🤖
+
+* **Data Preparation**: The script first separates the features and target variables, splits them into training and testing sets, and scales the features using `StandardScaler` to ensure model stability and improve performance.
+
+* **Multi-Target Model Setup**: It defines an **XGBoost regressor** as the base model. Because the goal is to predict several target variables at once, this regressor is wrapped in scikit-learn's **`MultiOutputRegressor`**, which trains a separate XGBoost model for each target column.
+
+* **Hyperparameter Tuning**: The script uses **`GridSearchCV`** to systematically test different combinations of hyperparameters (like the number of trees, tree depth, and learning rate). This process automates the search for the most effective model configuration, using 3-fold cross-validation to prevent overfitting.
+
+* **Prediction with the Best Model**: After the grid search identifies the best-performing hyperparameters, it uses this optimal model to make predictions on the held-out test data.
+
+* **Detailed Performance Evaluation**: Finally, the script evaluates the model's accuracy. It iterates through each target variable and calculates two key metrics:
+    * **R-squared (R²)**: Measures how much of the variance in the target is explained by the model.
+### Random Forest Multi-Target Regression 🌳
+
+* **Data Preparation**: The script selects features and targets, fills any missing values with zero, splits the data into training and testing sets, and finally standardizes the features using `StandardScaler`.
+
+* **Model Training**: A **Random Forest Regressor**, configured with specific hyperparameters (e.g., 200 trees, max depth of 15), is created. This model is then wrapped in a **`MultiOutputRegressor`** to enable it to predict multiple target variables at once.
+
+* **Prediction & Evaluation**: The trained model makes predictions on the test data. The script then evaluates performance by calculating the **Mean Squared Error (MSE)**, **Root Mean Squared Error (RMSE)**, and **R-squared (R²)** for each individual target.
+
+* **Execution & Output**: The entire process is encapsulated in a function that is called to train the model and return the final model, performance results, the scaler, and all data splits.
+
+Of course. Here is the raw markdown code for the previous response.
+
+Markdown
+
+### Model Performance Conclusion
+
+While all three models performed well, **XGBoost** is the superior choice, delivering the best combination of predictive accuracy and training efficiency.
+
+### Model Comparison
+
+* **XGBoost (Winner)** 🏆
+    It achieved the lowest error rates across all categories and top-tier R² scores. Its fast, low-resource training makes it the most practical solution.
+    * **SMS activity**: R² **0.9708**, RMSE **0.0509**
+    * **Call activity**: R² **0.9579**, RMSE **0.0815**
+    * **Internet traffic**: R² **0.9399**, RMSE **0.1064**
+
+***
+
+* **Random Forest**
+    This model produced the highest R² scores, making it extremely accurate. However, its high error rates (RMSE) compared to XGBoost and its slow, resource-intensive training process make it a less optimal choice.
+    * **SMS activity**: R² **0.9765**, RMSE **0.2031**
+    * **Call activity**: R² **0.9702**, RMSE **0.2399**
+    * **Internet traffic**: R² **0.9699**, RMSE **0.2291**
+
+***
+
+* **K-Nearest Neighbors (KNN)**
+    A solid performer with good R² scores, but its accuracy and error rates were not competitive with the other two models.
+    * **SMS activity**: R² **0.9010**, MSE **0.1737**
+    * **Call activity**: R² **0.9565**, MSE **0.0841**
+    * **Internet traffic**: R² **0.9065**, MSE **0.1630**
+
+***
+
+### Recommendation
+
+For this project, **XGBoost is the recommended model**. It provides the most accurate predictions (especially considering its significantly lower RMSE values) while being the fastest and most efficient model to train.
