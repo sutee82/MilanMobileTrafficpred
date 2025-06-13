@@ -64,8 +64,36 @@ To account for public holidays that may influence urban activity, a list of nati
 
 
 
-## Feature engineering 
+# Feature Engineering and Data Transformation
 
+## Methodology
+
+I performed extensive **feature engineering** and **data transformation** to prepare the dataset. The primary logic is encapsulated in two main Python functions: `comprehensive_data_transformation` for creating and modifying features, and `plot_transformation_effects` for visualizing the impact of these changes.
+
+My `comprehensive_data_transformation` function takes the raw data and applies the following enhancements:
+
+### 1. Temporal Feature Engineering
+- **Cyclical Time Features**: I converted the `Time_Numeric` (hour of the day) into `hour_sin` and `hour_cos` features. This helps the model understand the cyclical nature of time (e.g., that 23:00 is as close to 00:00 as 01:00 is).
+- **Time Periods**: I binned the `Time_Numeric` into categorical periods: `Night`, `Morning`, `Afternoon`, and `Evening`.
+- **Day-of-Week Features**: From the `Date` column, I extracted the day of the week, created a binary `is_weekend` flag, and also generated `day_of_week_sin` and `day_of_week_cos` features to capture the weekly cycle.
+
+### 2. Grid Square Feature Engineering
+- **Grid Density**: I created a `grid_density` feature, which counts the occurrences of each `Milan_Grid_Square_ID`. This acts as a proxy for how active or important a particular grid cell is.
+- **Average Grid Activity**: For each grid square, I calculated its average `SMS activity`, `Call activity`, and `Internet traffic activity` across the entire dataset, creating new features like `grid_avg_sms`.
+- **Spatial Coordinates**: I derived `grid_x` and `grid_y` coordinates from the `Milan_Grid_Square_ID`, assuming a consistent numerical pattern (e.g., ID `5012` is treated as row `50`, column `12`).
+
+### 3. Target Variable Transformations
+- **Skewness Correction**: I checked the skewness of my target variables (`SMS activity`, `Call activity`, `Internet traffic activity`).
+- **Applying Transformations**: For any target with a high absolute skewness (> 1.0), I applied three standard transformations to help normalize its distribution:
+  - **Log Transformation**: `np.log1p` to handle potential zero values.
+  - **Box-Cox Transformation**: A power transform that finds the best exponent to stabilize variance.
+  - **Square Root Transformation**.
+
+### 4. Interaction Features
+- I created new features by combining existing ones to capture more complex relationships. Examples include:
+  - `time_x_weekend`: The interaction between the hour of the day and whether it's a weekend.
+  - `grid_density_x_time`: The interaction between a grid's density and the hour.
+  - `sms_call_ratio`: The ratio of SMS to call activity.
 
 ## Models Used
 
