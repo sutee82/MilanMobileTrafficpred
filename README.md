@@ -2,7 +2,7 @@
 
 ## Description
 
-This project aims to predict mobile traffic in Milan using various machine learning regression models. The project is structured as a series of Jupyter notebooks, each focusing on a specific part of the data science pipeline, from data preprocessing to model training and evaluation.
+This project aims to predict mobile traffic in Milan using various machine learning regression models. The project is structured as a series of Jupyter notebooks, covering all aspect from data preprocessing to model training and evaluation.
 
 ## Project Structure
 
@@ -51,6 +51,14 @@ This includes meteorological information about precipitation in the covered area
 #### 3. National Holidays
 
 To account for public holidays that may influence urban activity, a list of national holidays for the Milan region during the observation period has been generated and included.
+
+## Performed data preprocessing to reduce dataset:
+* Transformed millisecond timestamps into a standard datetime format, localized to 'Europe/Rome'.
+* Only kept the middle 2500 square grid for processing (dropped 75% of the data) 
+* Sums up SMS, call, and internet traffic activities based on unique 'Square ID' and time intervals as not interested in country code 
+* Merges 'SMS-in'/'SMS-out' into a single 'SMS activity' and 'Call-in'/'Call-out' into 'Call activity' as not interested in direction of the activity
+* Drops original, more granular SMS and call columns after combination.
+* Results are a clean aggregated DataFrame suitable for further analysis and model training.
 
 ***
 
