@@ -1,0 +1,62 @@
+Date,DayOfWeek,IsWeekend,SignificantEvent
+2013-11-01,Friday,FALSE,"All Saints' Day (National Holiday)"
+2013-11-02,Saturday,TRUE,
+2013-11-03,Sunday,TRUE,
+2013-11-04,Monday,FALSE,
+2013-11-05,Tuesday,FALSE,
+2013-11-06,Wednesday,FALSE,
+2013-11-07,Thursday,FALSE,
+2013-11-08,Friday,FALSE,
+2013-11-09,Saturday,TRUE,
+2013-11-10,Sunday,TRUE,
+2013-11-11,Monday,FALSE,
+2013-11-12,Tuesday,FALSE,
+2013-11-13,Wednesday,FALSE,
+2013-11-14,Thursday,FALSE,
+2013-11-15,Friday,FALSE,
+2013-11-16,Saturday,TRUE,
+2013-11-17,Sunday,TRUE,
+2013-11-18,Monday,FALSE,
+2013-11-19,Tuesday,FALSE,
+2013-11-20,Wednesday,FALSE,
+2013-11-21,Thursday,FALSE,
+2013-11-22,Friday,FALSE,
+2013-11-23,Saturday,TRUE,
+2013-11-24,Sunday,TRUE,
+2013-11-25,Monday,FALSE,
+2013-11-26,Tuesday,FALSE,
+2013-11-27,Wednesday,FALSE,
+2013-11-28,Thursday,FALSE,
+2013-11-29,Friday,FALSE,
+2013-11-30,Saturday,TRUE,
+2013-12-01,Sunday,TRUE,"Start of Ski Season in Trentino (Early Dec)"
+2013-12-02,Monday,FALSE,"Start of Ski Season in Trentino (Early Dec)"
+2013-12-03,Tuesday,FALSE,"Start of Ski Season in Trentino (Early Dec)"
+2013-12-04,Wednesday,FALSE,"Start of Ski Season in Trentino (Early Dec)"
+2013-12-05,Thursday,FALSE,"Start of Ski Season in Trentino (Early Dec)"
+2013-12-06,Friday,FALSE,"Start of Ski Season in Trentino (Early Dec)"
+2013-12-07,Saturday,TRUE,"Feast of St. Ambrose (Milan Local Holiday)"
+2013-12-08,Sunday,TRUE,"Feast of the Immaculate Conception (National Holiday)"
+2013-12-09,Monday,FALSE,"Pre-Christmas Period"
+2013-12-10,Tuesday,FALSE,"Pre-Christmas Period"
+2013-12-11,Wednesday,FALSE,"2013 Winter Universiade (Trentino); Pre-Christmas Period"
+2013-12-12,Thursday,FALSE,"2013 Winter Universiade (Trentino); Pre-Christmas Period"
+2013-12-13,Friday,FALSE,"2013 Winter Universiade (Trentino); Pre-Christmas Period"
+2013-12-14,Saturday,TRUE,"2013 Winter Universiade (Trentino); Pre-Christmas Period"
+2013-12-15,Sunday,TRUE,"2013 Winter Universiade (Trentino); Pre-Christmas Period"
+2013-12-16,Monday,FALSE,"2013 Winter Universiade (Trentino); Pre-Christmas Period"
+2013-12-17,Tuesday,FALSE,"2013 Winter Universiade (Trentino); Pre-Christmas Period"
+2013-12-18,Wednesday,FALSE,"2013 Winter Universiade (Trentino); Pre-Christmas Period"
+2013-12-19,Thursday,FALSE,"2013 Winter Universiade (Trentino); Pre-Christmas Period"
+2013-12-20,Friday,FALSE,"2013 Winter Universiade (Trentino); Pre-Christmas Period"
+2013-12-21,Saturday,TRUE,"2013 Winter Universiade (Trentino) END; Pre-Christmas Period"
+2013-12-22,Sunday,TRUE,"Pre-Christmas Period"
+2013-12-23,Monday,FALSE,"Pre-Christmas Period"
+2013-12-24,Tuesday,FALSE,"Pre-Christmas Period"
+2013-12-25,Wednesday,FALSE,"Christmas Day (National Holiday)"
+2013-12-26,Thursday,FALSE,"St. Stephen's Day (National Holiday)"
+2013-12-27,Friday,FALSE,
+2013-12-28,Saturday,TRUE,
+2013-12-29,Sunday,TRUE,
+2013-12-30,Monday,FALSE,
+2013-12-31,Tuesday,FALSE,
