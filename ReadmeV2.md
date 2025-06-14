@@ -2,7 +2,11 @@
 
 ### Description
 
-This project aims to predict mobile traffic in Milan using various machine learning regression models. The project is structured as a series of Jupyter notebooks, covering all aspects from data preprocessing to model training and evaluation.
+This forecasting tool predicts mobile phone usage—calls, texts, and internet data—across different areas of Milan.
+
+Its main purpose is to help network operators anticipate demand spikes, allowing them to allocate resources effectively and prevent service disruptions like dropped calls or slow data. This ensures a reliable customer experience. The tool is also valuable for urban planners studying city mobility patterns.
+
+It is specifically designed for short-term forecasting within Milan and should not be used for long-term planning or for other cities
 
 ### Project Structure
 
