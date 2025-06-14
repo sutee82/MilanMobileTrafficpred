@@ -52,7 +52,7 @@
      * Telecom Italia dataset : https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/QLCABU
      * Precipitation dataset https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/S2UGMD  
      * Public holidays dataset : https://github.com/sutee82/MilanMobileTrafficpred/blob/main/calendar.txt
-
+* Smple processed data avaiable in the GitHub Repo 
 ## Uses
 
 * **What other tasks could the dataset be used for?**
