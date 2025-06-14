@@ -1,4 +1,4 @@
-# Milan Mobile Traffic Prediction
+ # Milan Mobile Traffic Prediction
 
 ## NON-TECHNICAL EXPLANATION OF YOUR PROJECT
 
@@ -16,7 +16,7 @@ The project evaluated three different regression models to predict mobile traffi
 
 ## HYPERPARAMETER OPTIMSATION
 
-(Information not available in the provided text)
+For all models the Gridsearch was used for Hyperparameter optimization. This was done using a limited dataset due to hight computational requirements for 2 out of the three models (KNN and Random Forest).
 
 ## RESULTS
 
